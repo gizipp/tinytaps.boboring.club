@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tiny-taps-v5';
+const CACHE_NAME = 'tiny-taps-v6';
 const ASSETS = [
   './',
   './index.html',
@@ -6,12 +6,15 @@ const ASSETS = [
   './icon.svg',
   './css/style.css',
   './js/main.js',
+  './games/balloon/',
   './games/balloon/index.html',
   './games/balloon/css/style.css',
   './games/balloon/js/script.js',
+  './games/xylophone/',
   './games/xylophone/index.html',
   './games/xylophone/css/style.css',
   './games/xylophone/js/script.js',
+  './games/apple/',
   './games/apple/index.html',
   './games/apple/css/style.css',
   './games/apple/js/script.js'
@@ -42,7 +45,15 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
+      if (response) return response;
+
+      // Fallback for directory requests to index.html
+      const url = new URL(event.request.url);
+      if (url.pathname.endsWith('/')) {
+        return caches.match(url.pathname + 'index.html');
+      }
+
+      return fetch(event.request);
     })
   );
 });

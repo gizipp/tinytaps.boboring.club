@@ -51,7 +51,7 @@ homeBtn.addEventListener('pointerdown', (e) => {
     const currentTime = new Date().getTime();
     const tapLength = currentTime - lastTap;
     if (tapLength < 500 && tapLength > 0) {
-        window.location.href = '../../index.html';
+        window.location.href = '../../';
     } else {
         homeBtn.style.opacity = '0.5';
         setTimeout(() => homeBtn.style.opacity = '0.2', 500);
