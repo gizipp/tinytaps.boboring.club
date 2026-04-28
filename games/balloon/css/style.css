@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    height: 100dvh; /* Dynamic Viewport Height untuk mobile */
+    overflow: hidden;
+    background-color: #f0f8ff;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    /* Memastikan warna background mengisi safe area di iPhone */
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+#game-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+#home-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 40px;
+    opacity: 0.2;
+    z-index: 100;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -150px; /* Start below the screen */
+    width: 100px;
+    height: 120px;
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+    cursor: pointer;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+/* Balloon string */
+.balloon::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    transform: translateX(-50%);
+}
+
+/* Popping animation class */
+.balloon.popping {
+    transform: scale(1.5);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Pastel colors for balloons */
+.color-1 { background-color: #ffb7b2; } /* Salmon */
+.color-2 { background-color: #ffdac1; } /* Peach */
+.color-3 { background-color: #e2f0cb; } /* Mint */
+.color-4 { background-color: #b5ead7; } /* Seafoam */
+.color-5 { background-color: #c7ceea; } /* Lavender */
+.color-6 { background-color: #ff9aa2; } /* Pink */

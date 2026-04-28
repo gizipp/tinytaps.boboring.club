@@ -1,0 +1,19 @@
+{
+  "name": "Tiny Taps",
+  "short_name": "Tiny Taps",
+  "description": "Digital toys for toddlers. Zero text, zero ads, 100% offline.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "display_override": ["fullscreen"],
+  "background_color": "#f0f8ff",
+  "theme_color": "#ff9aa2",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

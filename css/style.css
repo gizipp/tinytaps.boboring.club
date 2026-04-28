@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f8ff;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+}
+
+.hub-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.hub-card {
+    width: 160px;
+    height: 160px;
+    background: white;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 90px;
+    text-decoration: none;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 6px solid #fff;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.hub-card:active {
+    transform: scale(0.9);
+}
+
+.hub-card.balloon { 
+    border-color: #ff9aa2; 
+    background-color: #fff0f1;
+}
+.hub-card.xylophone { 
+    border-color: #fff9c4; 
+    background-color: #fffdf0;
+}
+.hub-card.apple { 
+    border-color: #a5d6a7; 
+    background-color: #f1f8f1;
+}
+
+@media (max-width: 500px) {
+    .hub-card {
+        width: 130px;
+        height: 130px;
+        font-size: 70px;
+    }
+    .hub-grid { gap: 20px; }
+}
